@@ -11,19 +11,20 @@ int main() {
 	cout << " letter isogram I´m thinking of? \n";
 
 	//get a guess from the player
+	cout << "Enter you Guess: ";
 	string Guess = "";
-	cout << "Guess: ";	
-	cin >> Guess;
+	getline(cin, Guess);	
 	
 	//repeat the guess back to them
 	cout << "Your guess was: " << Guess << endl;
 
 	//get a guess from the player
-	cout << "Guess: ";
-	cin >> Guess;
+	cout << "Enter you Guess: ";
+	getline(cin, Guess);
 
 	//repeat the guess back to them
 	cout << "Your guess was: " << Guess << endl;
+	
 
 	cout << endl;
 	return 0;
