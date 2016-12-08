@@ -9,8 +9,13 @@ string GetGuessAndPrintBack();
 int main() {
 	
 	PrintIntro();
-	GetGuessAndPrintBack();
-	GetGuessAndPrintBack();
+	
+	//loop for the number of turns asking for guesses
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int i = 1; i <= NUMBER_OF_TURNS; i++) {
+		GetGuessAndPrintBack();
+		cout << endl;
+	}
 		
 	cout << endl;
 	return 0;
