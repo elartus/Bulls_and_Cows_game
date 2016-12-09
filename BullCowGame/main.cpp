@@ -5,12 +5,14 @@ using namespace std;
 
 void PrintIntro();
 void PlayGame();
+bool AskToPlayAgain();
 string GetGuess();
 
 int main() {
 	
 	PrintIntro();	
 	PlayGame();
+	AskToPlayAgain();
 	return 0; //Exit Aplication
 }
 
@@ -33,6 +35,16 @@ void PlayGame()
 		cout << "Your guess was: " << Guess << endl;
 		cout << endl;
 	}
+}
+
+bool AskToPlayAgain(){
+	cout << "Do you want to play again? ";
+	string Response = "";
+	getline(cin, Response);
+		
+	cout << endl;
+
+	return (Response[0] == 'y') || (Response[0] == 'Y');
 }
 
 //get a guess from the player
