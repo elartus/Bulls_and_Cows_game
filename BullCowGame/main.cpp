@@ -4,23 +4,14 @@
 using namespace std;
 
 void PrintIntro();
-string GetGuessAndPrintBack();
+void PlayGame();
+string GetGuess();
 
 int main() {
 	
-	PrintIntro();
-	
-	//loop for the number of turns asking for guesses
-	constexpr int NUMBER_OF_TURNS = 5;
-	for (int i = 1; i <= NUMBER_OF_TURNS; i++) {
-		GetGuessAndPrintBack();
-		cout << endl;
-	}
-		
-	cout << endl;
-	return 0;
-
-
+	PrintIntro();	
+	PlayGame();
+	return 0; //Exit Aplication
 }
 
 //introduce the game
@@ -33,15 +24,22 @@ void PrintIntro() {
 	return;
 }
 
+void PlayGame()
+{
+	//loop for the number of turns asking for guesses
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int i = 1; i <= NUMBER_OF_TURNS; i++) {
+		string Guess = GetGuess();
+		cout << "Your guess was: " << Guess << endl;
+		cout << endl;
+	}
+}
+
 //get a guess from the player
-string GetGuessAndPrintBack() {
+string GetGuess() {
 	
 	cout << "Enter you Guess: ";
 	string Guess = "";
 	getline(cin, Guess);
-
-	//print the guess back
-	cout << "Your guess was: " << Guess << endl;
-
 	return Guess;
 }
