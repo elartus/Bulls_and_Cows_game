@@ -27,15 +27,14 @@ void PrintIntro() {
 	constexpr int WORLD_LENGHT = 5;
 	std::cout << "Welcome to Bulls and Cows, a fun word game \n";
 	std::cout << "Can you guess the " << WORLD_LENGHT;
-	std::cout << " letter isogram I´m thinking of? \n";
+	std::cout << " letter isogram Im thinking of? \n";
 	return;
 }
 
 void PlayGame(){
-
+	BCGame.Reset();
 	int MaxTries = BCGame.GetMaxtries();
-	std::cout << MaxTries << std::endl; 
-
+	
 	//loop for the number of turns asking for guesses	
 	for (int i = 1; i <= MaxTries; i++) {
 		std::string Guess = GetGuess();
