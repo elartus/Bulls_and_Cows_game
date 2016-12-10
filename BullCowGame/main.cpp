@@ -7,6 +7,8 @@ void PlayGame();
 bool AskToPlayAgain();
 std::string GetGuess();
 
+FBullCowGame BCGame; // Instantiate a new game
+
 int main() {
 	
 	bool bPlayAgain = false;
@@ -31,14 +33,26 @@ void PrintIntro() {
 
 void PlayGame(){
 
-	FBullCowGame BCGame; // Instantiate a new game
-	//loop for the number of turns asking for guesses
-	constexpr int NUMBER_OF_TURNS = 5;
-	for (int i = 1; i <= NUMBER_OF_TURNS; i++) {
+	int MaxTries = BCGame.GetMaxtries();
+	std::cout << MaxTries << std::endl; 
+
+	//loop for the number of turns asking for guesses	
+	for (int i = 1; i <= MaxTries; i++) {
 		std::string Guess = GetGuess();
 		std::cout << "Your guess was: " << Guess << std::endl;
 		std::cout << std::endl;
 	}
+}
+
+//get a guess from the player
+std::string GetGuess() {
+
+	int CurrentTry = BCGame.GetCurrentTry();
+	
+	std::cout << "Try "<< CurrentTry << ". Enter you Guess: ";
+	std::string Guess = "";
+	std::getline(std::cin, Guess);
+	return Guess;
 }
 
 bool AskToPlayAgain(){
@@ -51,11 +65,3 @@ bool AskToPlayAgain(){
 	return (Response[0] == 'y') || (Response[0] == 'Y');
 }
 
-//get a guess from the player
-std::string GetGuess() {
-	
-	std::cout << "Enter you Guess: ";
-	std::string Guess = "";
-	std::getline(std::cin, Guess);
-	return Guess;
-}

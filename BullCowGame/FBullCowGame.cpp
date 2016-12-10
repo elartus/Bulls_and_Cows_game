@@ -1,19 +1,14 @@
 #include "FBullCowGame.h"
 
+int FBullCowGame::GetMaxtries() { return MyMaxTries; }
+int FBullCowGame::GetCurrentTry() { return MyCurrentTry; }
+
+
 void FBullCowGame::Reset()
 {
 	return;
 }
 
-int FBullCowGame::GetMaxtries()
-{
-	return 0;
-}
-
-int FBullCowGame::GetCurrentTry()
-{
-	return 0;
-}
 
 bool FBullCowGame::IsGameWon()
 {
