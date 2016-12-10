@@ -2,11 +2,12 @@
 #include <string>
 
 class FBullCowGame {
-public:
+public:	
+	int GetMaxtries() const;
+	int GetCurrentTry() const;
+	bool IsGameWon() const;
+
 	void Reset(); //TODO make a more rich return value.
-	int GetMaxtries();
-	int GetCurrentTry();
-	bool IsGameWon();
 	bool CheckGuessValidity(std::string); //TODO make a more tich return value.
 
 
